@@ -1,0 +1,38 @@
+.rf-MarkdownEditor {
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.rf-MarkdownEditor-editor {
+	height: inherit;
+}
+
+.rf-MarkdownEditor-preview {
+	height: auto;
+}
+
+.rf-MarkdownEditor-tabs {
+	height: 40px;
+	width: 100%;
+	display: flex;
+}
+
+.rf-MarkdownEditor-tab {
+	height: 100%;
+	width: 50%;
+	flex-basis: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background: var(--color__gray);
+	transition: all 0.3s ease-in-out;
+}
+
+.rf-MarkdownEditor-tab:hover {
+	background: var(--color__gray--light);
+}
+
+.rf-MarkdownEditor-tab-active {
+	background: var(--color__gray--light);
+}

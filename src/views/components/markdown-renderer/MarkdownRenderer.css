@@ -1,0 +1,577 @@
+.rf-MarkdownRenderer {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	line-height: 1.5;
+	color: var(--font__color--primary);
+	font-size: 12px;
+	padding: 20px 0;
+	word-wrap: break-word;
+	border-top: 1px solid var(--color__gray--light);
+	border-bottom: 1px solid var(--color__gray--light);
+}
+
+.rf-MarkdownRenderer .pl-c {
+	color: #6a737d;
+}
+
+.rf-MarkdownRenderer .pl-c1,
+.rf-MarkdownRenderer .pl-s .pl-v {
+	color: #005cc5;
+}
+
+.rf-MarkdownRenderer .pl-e,
+.rf-MarkdownRenderer .pl-en {
+	color: #6f42c1;
+}
+
+.rf-MarkdownRenderer .pl-smi,
+.rf-MarkdownRenderer .pl-s .pl-s1 {
+	color: var(--font__color--primary);
+}
+
+.rf-MarkdownRenderer .pl-ent {
+	color: #22863a;
+}
+
+.rf-MarkdownRenderer .pl-k {
+	color: #d73a49;
+}
+
+.rf-MarkdownRenderer .pl-s,
+.rf-MarkdownRenderer .pl-pds,
+.rf-MarkdownRenderer .pl-s .pl-pse .pl-s1,
+.rf-MarkdownRenderer .pl-sr,
+.rf-MarkdownRenderer .pl-sr .pl-cce,
+.rf-MarkdownRenderer .pl-sr .pl-sre,
+.rf-MarkdownRenderer .pl-sr .pl-sra {
+	color: #032f62;
+}
+
+.rf-MarkdownRenderer .pl-v,
+.rf-MarkdownRenderer .pl-smw {
+	color: #e36209;
+}
+
+.rf-MarkdownRenderer .pl-bu {
+	color: #b31d28;
+}
+
+.rf-MarkdownRenderer .pl-ii {
+	color: #fafbfc;
+	background-color: #b31d28;
+}
+
+.rf-MarkdownRenderer .pl-c2 {
+	color: #fafbfc;
+	background-color: #d73a49;
+}
+
+.rf-MarkdownRenderer .pl-c2:before {
+	content: '^M';
+}
+
+.rf-MarkdownRenderer .pl-sr .pl-cce {
+	font-weight: bold;
+	color: #22863a;
+}
+
+.rf-MarkdownRenderer .pl-ml {
+	color: #735c0f;
+}
+
+.rf-MarkdownRenderer .pl-mh,
+.rf-MarkdownRenderer .pl-mh .pl-en,
+.rf-MarkdownRenderer .pl-ms {
+	font-weight: bold;
+	color: #005cc5;
+}
+
+.rf-MarkdownRenderer .pl-mi {
+	font-style: italic;
+	color: var(--font__color--primary);
+}
+
+.rf-MarkdownRenderer .pl-mb {
+	font-weight: bold;
+	color: var(--font__color--primary);
+}
+
+.rf-MarkdownRenderer .pl-md {
+	color: #b31d28;
+	background-color: #ffeef0;
+}
+
+.rf-MarkdownRenderer .pl-mi1 {
+	color: #22863a;
+	background-color: #f0fff4;
+}
+
+.rf-MarkdownRenderer .pl-mc {
+	color: #e36209;
+	background-color: #ffebda;
+}
+
+.rf-MarkdownRenderer .pl-mi2 {
+	color: var(--color__gray);
+	background-color: #005cc5;
+}
+
+.rf-MarkdownRenderer .pl-mdr {
+	font-weight: bold;
+	color: #6f42c1;
+}
+
+.rf-MarkdownRenderer .pl-ba {
+	color: #586069;
+}
+
+.rf-MarkdownRenderer .pl-sg {
+	color: #959da5;
+}
+
+.rf-MarkdownRenderer .pl-corl {
+	text-decoration: underline;
+	color: #032f62;
+}
+
+.rf-MarkdownRenderer .octicon {
+	display: inline-block;
+	fill: currentColor;
+	vertical-align: text-bottom;
+}
+
+.rf-MarkdownRenderer a {
+	background-color: transparent;
+	color: var(--font__color--secondary);
+	text-decoration: none;
+}
+
+.rf-MarkdownRenderer a:active,
+.rf-MarkdownRenderer a:hover {
+	outline-width: 0;
+}
+
+.rf-MarkdownRenderer strong {
+	font-weight: 700;
+}
+
+.rf-MarkdownRenderer h1 {
+	margin: 0.67em 0;
+	font-weight: 700;
+	padding-bottom: 0.3em;
+	font-size: 2em;
+	border-bottom: 1px solid #eaecef;
+}
+
+.rf-MarkdownRenderer img {
+	border-style: none;
+	max-width: 100%;
+	box-sizing: content-box;
+}
+
+.rf-MarkdownRenderer code,
+.rf-MarkdownRenderer kbd,
+.rf-MarkdownRenderer pre {
+	font-size: 1em;
+}
+
+.rf-MarkdownRenderer hr {
+	box-sizing: content-box;
+	overflow: hidden;
+	background: transparent;
+	height: 0.25em;
+	padding: 0;
+	margin: 24px 0;
+	border: 0;
+	border-bottom: 1px solid var(--color__gray--light);
+}
+
+.rf-MarkdownRenderer input {
+	font: inherit;
+	margin: 0;
+	overflow: visible;
+}
+
+.rf-MarkdownRenderer [type='checkbox'] {
+	box-sizing: border-box;
+	margin-right: 10px;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	cursor: default;
+}
+
+.rf-MarkdownRenderer * {
+	box-sizing: border-box;
+}
+
+.rf-MarkdownRenderer a:hover {
+	text-decoration: underline;
+}
+
+.rf-MarkdownRenderer hr:before {
+	display: table;
+	content: '';
+}
+
+.rf-MarkdownRenderer hr:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+
+.rf-MarkdownRenderer table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	width: 100%;
+	overflow: auto;
+}
+
+.rf-MarkdownRenderer td,
+.rf-MarkdownRenderer th {
+	padding: 0;
+}
+
+.rf-MarkdownRenderer h1,
+.rf-MarkdownRenderer h2,
+.rf-MarkdownRenderer h3,
+.rf-MarkdownRenderer h4,
+.rf-MarkdownRenderer h5,
+.rf-MarkdownRenderer h6 {
+	margin-top: 24px;
+	margin-bottom: 16px;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.rf-MarkdownRenderer h2 {
+	font-weight: 700;
+	padding-bottom: 0.3em;
+	font-size: 1.5em;
+	border-bottom: 1px solid #eaecef;
+}
+
+.rf-MarkdownRenderer h3 {
+	font-size: 1.25em;
+	font-weight: 700;
+}
+
+.rf-MarkdownRenderer h4 {
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.rf-MarkdownRenderer h5 {
+	font-weight: 700;
+	font-size: 0.88em;
+}
+
+.rf-MarkdownRenderer h6 {
+	font-weight: 700;
+	font-size: 0.85em;
+	color: #6a737d;
+}
+
+.rf-MarkdownRenderer p {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.rf-MarkdownRenderer blockquote {
+	margin: 0;
+	padding: 0 1em;
+	color: #6a737d;
+	border-left: 0.25em solid var(--color__gray--light);
+}
+
+.rf-MarkdownRenderer ul,
+.rf-MarkdownRenderer ol {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 2em;
+}
+
+.rf-MarkdownRenderer ol ol,
+.rf-MarkdownRenderer ul ol {
+	list-style-type: lower-roman;
+}
+
+.rf-MarkdownRenderer ul ul ol,
+.rf-MarkdownRenderer ul ol ol,
+.rf-MarkdownRenderer ol ul ol,
+.rf-MarkdownRenderer ol ol ol {
+	list-style-type: lower-alpha;
+}
+
+.rf-MarkdownRenderer dd {
+	margin-left: 0;
+}
+
+.rf-MarkdownRenderer code {
+	padding: 0.2em 0.4em;
+	margin: 0;
+	font-size: 85%;
+	background-color: rgba(27,31,35,0.05);
+	border-radius: 3px;
+}
+
+.rf-MarkdownRenderer pre {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 12px;
+	word-wrap: normal;
+}
+
+.rf-MarkdownRenderer .pl-0 {
+	padding-left: 0 !important;
+}
+
+.rf-MarkdownRenderer .pl-1 {
+	padding-left: 4px !important;
+}
+
+.rf-MarkdownRenderer .pl-2 {
+	padding-left: 8px !important;
+}
+
+.rf-MarkdownRenderer .pl-3 {
+	padding-left: 16px !important;
+}
+
+.rf-MarkdownRenderer .pl-4 {
+	padding-left: 24px !important;
+}
+
+.rf-MarkdownRenderer .pl-5 {
+	padding-left: 32px !important;
+}
+
+.rf-MarkdownRenderer .pl-6 {
+	padding-left: 40px !important;
+}
+
+.rf-MarkdownRenderer:before {
+	display: table;
+	content: '';
+}
+
+.rf-MarkdownRenderer:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+
+.rf-MarkdownRenderer > *:first-child {
+	margin-top: 0 !important;
+}
+
+.rf-MarkdownRenderer > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+.rf-MarkdownRenderer a:not([href]) {
+	color: inherit;
+	text-decoration: none;
+}
+
+.rf-MarkdownRenderer .anchor {
+	float: left;
+	padding-right: 4px;
+	margin-left: -20px;
+	line-height: 1;
+}
+
+.rf-MarkdownRenderer .anchor:focus {
+	outline: none;
+}
+
+.rf-MarkdownRenderer p,
+.rf-MarkdownRenderer blockquote,
+.rf-MarkdownRenderer ul,
+.rf-MarkdownRenderer ol,
+.rf-MarkdownRenderer dl,
+.rf-MarkdownRenderer table,
+.rf-MarkdownRenderer pre {
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+.rf-MarkdownRenderer blockquote > :first-child {
+	margin-top: 0;
+}
+
+.rf-MarkdownRenderer blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+.rf-MarkdownRenderer kbd {
+	padding: 3px 5px;
+	color: #444d56;
+	vertical-align: middle;
+	background-color: #fafbfc;
+	border-radius: 3px;
+	display: inline-block;
+	font: 11px 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+	line-height: 10px;
+	border: solid 1px #d1d5da;
+	border-bottom-color: var(--color__gray--light);
+	box-shadow: inset 0 -1px 0 var(--color__gray--light);
+}
+
+.rf-MarkdownRenderer h1 .octicon-link,
+.rf-MarkdownRenderer h2 .octicon-link,
+.rf-MarkdownRenderer h3 .octicon-link,
+.rf-MarkdownRenderer h4 .octicon-link,
+.rf-MarkdownRenderer h5 .octicon-link,
+.rf-MarkdownRenderer h6 .octicon-link {
+	color: #1b1f23;
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+.rf-MarkdownRenderer h1:hover .anchor,
+.rf-MarkdownRenderer h2:hover .anchor,
+.rf-MarkdownRenderer h3:hover .anchor,
+.rf-MarkdownRenderer h4:hover .anchor,
+.rf-MarkdownRenderer h5:hover .anchor,
+.rf-MarkdownRenderer h6:hover .anchor {
+	text-decoration: none;
+}
+
+.rf-MarkdownRenderer h1:hover .anchor .octicon-link,
+.rf-MarkdownRenderer h2:hover .anchor .octicon-link,
+.rf-MarkdownRenderer h3:hover .anchor .octicon-link,
+.rf-MarkdownRenderer h4:hover .anchor .octicon-link,
+.rf-MarkdownRenderer h5:hover .anchor .octicon-link,
+.rf-MarkdownRenderer h6:hover .anchor .octicon-link {
+	visibility: visible;
+}
+
+.rf-MarkdownRenderer ul ul,
+.rf-MarkdownRenderer ul ol,
+.rf-MarkdownRenderer ol ol,
+.rf-MarkdownRenderer ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.rf-MarkdownRenderer li {
+	word-wrap: break-all;
+}
+
+.rf-MarkdownRenderer li > p {
+	margin-top: 16px;
+}
+
+.rf-MarkdownRenderer li + li {
+	margin-top: 0.25em;
+}
+
+.rf-MarkdownRenderer dl {
+	padding: 0;
+}
+
+.rf-MarkdownRenderer dl dt {
+	padding: 0;
+	margin-top: 16px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.rf-MarkdownRenderer dl dd {
+	padding: 0 16px;
+	margin-bottom: 16px;
+}
+
+.rf-MarkdownRenderer table th {
+	font-weight: 700;
+}
+
+.rf-MarkdownRenderer table th,
+.rf-MarkdownRenderer table td {
+	padding: 6px 13px;
+	border: 1px solid var(--color__gray--light);
+}
+
+.rf-MarkdownRenderer table tr {
+	border-top: 1px solid var(--color__gray--light);
+}
+
+.rf-MarkdownRenderer table tr:nth-child(2n) {
+	background-color: var(--color__gray);
+}
+
+.rf-MarkdownRenderer img[align='right'] {
+	padding-left: 20px;
+}
+
+.rf-MarkdownRenderer img[align='left'] {
+	padding-right: 20px;
+}
+
+.rf-MarkdownRenderer pre > code {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+	border: 0;
+}
+
+.rf-MarkdownRenderer .highlight {
+	margin-bottom: 16px;
+}
+
+.rf-MarkdownRenderer .highlight pre {
+	margin-bottom: 0;
+	word-break: normal;
+}
+
+.rf-MarkdownRenderer .highlight pre,
+.rf-MarkdownRenderer pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: var(--color__gray);
+	border-radius: 3px;
+}
+
+.rf-MarkdownRenderer pre code {
+	display: inline;
+	max-width: auto;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
+}
+
+.rf-MarkdownRenderer .full-commit .btn-outline:not(:disabled):hover {
+	color: #005cc5;
+	border-color: #005cc5;
+}
+
+.rf-MarkdownRenderer :checked + .radio-label {
+	position: relative;
+	z-index: 1;
+	border-color: var(--font__color--primary);
+}
+
+.rf-MarkdownRenderer .task-list-item {
+	list-style-type: none;
+}
+
+.rf-MarkdownRenderer .task-list-item + .task-list-item {
+	margin-top: 3px;
+}
+
+.rf-MarkdownRenderer .task-list-item input {
+	margin: 0 0.2em 0.25em -1.6em;
+	vertical-align: middle;
+}

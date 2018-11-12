@@ -1,0 +1,40 @@
+@import '../../../animations.css';
+
+.rf-Toaster {
+	animation: var(--animation__slide_in--up);
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	min-width: 250px;
+	min-height: 40px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background: var(--toaster__bg);
+	color: var(--font__color--primary);
+	font-weight: 700;
+	box-shadow: var(--drop-shadow__inverse);
+}
+
+.rf-Toaster-actionButton {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	color: var(--font__color--secondary);
+}
+
+.rf-Toaster-actionButton:hover {
+	background: rgba(0,0,0,0.1);
+}
+
+.rf-Toaster-toastText {
+	display: flex;
+	align-items: center;
+	margin: 10px;
+	max-width: 300px;
+}

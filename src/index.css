@@ -1,0 +1,100 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
+@import '../node_modules/codemirror/lib/codemirror.css';
+@import 'animations.css';
+@import 'cm_ratefolio.css';
+
+/* Variables */
+
+:root {
+
+	/* Colors */
+
+	--color__white: #f0f0f7;
+	--color__white--dark: #b7b7cd;
+	--color__gray: #353740;
+	--color__gray--light: #5e5d66;
+	--color__gray--dark: #21212a;
+	--color__pink: #f7537c;
+
+	--color__primary: var(--color__gray);
+	--color__secondary: var(--color__pink);
+
+	/* Body */
+
+	--bg__color: var(--color__gray--dark);
+	--drop-shadow__regular: 10px 0 37.6px 2.4px rgba(0, 0, 0, 0.2);
+	--drop-shadow__inverse: -10px 0 37.6px 2.4px rgba(0, 0, 0, 0.2);
+
+	/* Fonts */
+
+	--font__color--primary: var(--color__white);
+	--font__color--dark: var(--color__white--dark);
+	--font__color--secondary: var(--color__pink);
+
+	--font__size--base: 12px;
+	--font__size--tiny: 8px;
+	--font__size--small: 10px;
+	--font__size--big: 16px;
+	--font__size--giant: 32px;
+
+	/* Content */
+
+	--content__maxWidth: 936px;
+	--content__minHeight: calc(100vh - var(--main-menu__height));
+
+	/* Main Menu */
+
+	--main-menu__height: 50px;
+	--main-menu__bg: var(--color__gray);
+
+	/* Buttons */
+
+	--button__height: 32px;
+	--button__width--min: 144px;
+	--button__width--max: calc(var(--button__width--min)*2);
+	--button__drop-shadow: 0 10px 20px 2px rgba(0,0,0,0.3);
+
+	/* Toaster */
+
+	--toaster__bg: var(--color__gray);
+
+	/* Animbations */
+
+	--animation__slide_in--up: slideInUp 1s;
+	--animation__typing: typing 2s steps(16) forwards, cursor 1s infinite;
+
+	/* stylelint-disable */
+
+	--animation__pulse--1: pulse_1 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) infinite;
+	--animation__pulse--2: pulse_2 1.5s cubic-bezier(0.075, 0.820, 0.165, 1.000) .25s infinite;
+
+	/* stylelint-enable */
+}
+
+/* Global */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Mono', 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: var(--bg__color);
+	font-weight: 500;
+	font-size: var(--font__size--base);
+	color: var(--font__color--primary);
+}
+
+code {
+	font-family: 'Roboto Mono', 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+}
+
+a {
+	text-decoration: none;
+	color: var(--font__color--primary);
+}

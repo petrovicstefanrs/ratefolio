@@ -1,0 +1,27 @@
+.rf-SectionHeader > h1,
+.rf-SectionHeader > h2,
+.rf-SectionHeader > h3,
+.rf-SectionHeader > h4,
+.rf-SectionHeader > h5,
+.rf-SectionHeader > h6 {
+	margin: 0;
+	position: relative;
+	display: inline-block;
+	font-weight: 400;
+	color: var(--font__color--dark);
+}
+
+.rf-SectionHeader > h1 span,
+.rf-SectionHeader > h2 span,
+.rf-SectionHeader > h3 span,
+.rf-SectionHeader > h4 span,
+.rf-SectionHeader > h5 span,
+.rf-SectionHeader > h6 span {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: var(--bg__color);
+	border-left: 2px solid transparent;
+	animation: var(--animation__typing);
+}

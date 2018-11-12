@@ -1,0 +1,18 @@
+.rf-PageWrapper {
+	height: var(--content__minHeight);
+	max-width: var(--content__maxWidth);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.rf-PageWrapper-vertical {
+	flex-direction: column;
+	padding-top: 40px;
+}
+
+.rf-PageWrapper-horizontal {
+	flex-direction: row;
+	justify-content: center;
+}

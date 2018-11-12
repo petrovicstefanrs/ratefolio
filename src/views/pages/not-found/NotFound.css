@@ -1,0 +1,17 @@
+.rf-NotFound-left, .rf-NotFound-right, .rf-Separator {
+	height: 200px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.rf-NotFound-left > img {
+	max-width: 200px;
+}
+
+.rf-NotFound-right .rf-Button {
+	margin: 20px 0 0;
+	width: var(--button__width--min);
+}

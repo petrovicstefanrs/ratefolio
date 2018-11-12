@@ -1,0 +1,33 @@
+.rf-Button {
+	height: var(--button__height);
+	min-width: var(--button__width--min);
+	max-width: var(--button__width--max);
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	border: 1px solid var(--color__secondary);
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.rf-Button:hover {
+	box-shadow: var(--button__drop-shadow);
+}
+
+.rf-Button-left {
+	flex-direction: row;
+}
+
+.rf-Button-right {
+	flex-direction: row-reverse;
+}
+
+.rf-Button-left > .rf-Button-icon {
+	margin-right: 10px;
+}
+
+.rf-Button-right > .rf-Button-icon {
+	margin-left: 10px;
+}

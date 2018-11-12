@@ -1,0 +1,149 @@
+.rf-MainMenu {
+	width: 100%;
+	height: var(--main-menu__height);
+	box-shadow: var(--drop-shadow__regular);
+	background: var(--main-menu__bg);
+}
+
+.rf-MainMenu-wrapper {
+	height: 100%;
+	margin: 0 auto;
+	max-width: var(--content__maxWidth);
+	display: flex;
+}
+
+.rf-MainMenu-logo {
+	width: 200px;
+	height: 100%;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+}
+
+.rf-MainMenu-logo > a {
+	display: flex;
+}
+
+.rf-MainMenu-logo > a:hover {
+	color: var(--font__color--dark);
+}
+
+.rf-MainMenu-logo > a > span {
+	margin-left: 2px;
+}
+
+.rf-MainMenu-logo > a > .fa {
+	margin-top: 4px;
+	color: var(--color__pink);
+}
+
+.rf-MainMenu-logo > a > .fa:last-child {
+	margin-top: 4px;
+	transform: rotateY(180deg);
+}
+
+.rf-MainMenu-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.rf-MainMenu-link {
+	margin-left: 20px;
+	padding: 5px 0;
+	position: relative;
+}
+
+.rf-MainMenu-link:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	height: 2px;
+	width: 0;
+	background: var(--color__pink);
+	transition: all 0.3s ease-in-out;
+}
+
+.rf-MainMenu-link:hover:after {
+	width: 100%;
+	background: var(--color__pink);
+}
+
+.rf-MainMenu-link-active:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	height: 2px;
+	width: 100%;
+	background: var(--color__pink);
+	transition: all 0.3s ease-in-out;
+}
+
+.rf-MainMenu-link > .fa {
+	margin-right: 5px;
+	color: var(--color__pink);
+}
+
+/* User Dropdown */
+
+.rf-MainMenu-dropdown {
+	position: relative;
+	margin-left: 20px;
+	height: 100%;
+}
+
+.rf-MainMenu-dropdownTrigger {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background-color: var(--color__gray);
+	padding: 0 10px;
+	transition: all 0.2s ease-in-out;
+	position: relative;
+	z-index: 2;
+}
+
+.rf-MainMenu-dropdownTrigger:hover {
+	background-color: var(--color__gray--light);
+}
+
+.rf-MainMenu-dropdownTriggerName {
+	margin-right: 10px;
+}
+
+.rf-MainMenu-dropdownMenu {
+	margin-top: -100%;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+	background: var(--color__gray);
+	transition: all 0.5s ease-in-out;
+}
+
+.rf-MainMenu-dropdownItem {
+	cursor: pointer;
+	padding: 0 10px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.rf-MainMenu-dropdownItem:hover {
+	background-color: var(--color__gray--light);
+}
+
+.rf-MainMenu-dropdownItem > .fa {
+	width: 26px;
+	color: var(--color__pink);
+}
+
+.rf-MainMenu-dropdown:hover > .rf-MainMenu-dropdownMenu {
+	margin-top: 0;
+}

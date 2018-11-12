@@ -1,0 +1,16 @@
+.rf-TextBlock {
+	text-align: justify;
+	align-self: flex-start;
+	margin-top: 20px;
+	color: var(--font__color--dark);
+}
+
+.rf-TextBlock > span {
+	color: var(--font__color--primary);
+	font-weight: 700;
+}
+
+.rf-TextBlock > a {
+	color: var(--font__color--secondary);
+	font-weight: 700;
+}
