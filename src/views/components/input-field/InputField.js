@@ -27,6 +27,7 @@ class InputField extends Component {
 		rows: PropTypes.number,
 		rowsMax: PropTypes.number,
 		placeholder: PropTypes.string,
+		autoFocus: PropTypes.bool,
 	};
 
 	static defaultProps = {
@@ -59,14 +60,14 @@ class InputField extends Component {
 	};
 
 	render() {
-		const {type, placeholder, className} = this.props;
+		const {type, placeholder, className, autoFocus} = this.props;
 		const {value, id} = this.state;
 
 		return (
 			<input
 				id={id}
 				autoComplete="off"
-				autoFocus
+				autoFocus={autoFocus}
 				className={CLASS + ' ' + className || ''}
 				maxLength="64"
 				onChange={this.onChange}

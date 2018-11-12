@@ -47,10 +47,10 @@ const SIGNED_IN_MENU_ITEMS = {
 };
 
 const USER_DROPDOWN_ITEMS = {
-	new_project: {
+	PROJECT_NEW: {
 		name: 'New Project',
 		icon: FA.plus,
-		href: routes.NEW_PROJECT,
+		href: routes.PROJECT_NEW,
 	},
 	my_projects: {
 		name: 'My Projects',
@@ -63,6 +63,7 @@ class MainMenu extends Component {
 	static propTypes = {
 		user: PropTypes.object,
 		signOut: PropTypes.func.isRequired,
+		location: PropTypes.object.isRequired,
 	};
 
 	renderMenuItems = () => {

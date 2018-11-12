@@ -16,4 +16,8 @@ export const AUTH_SIGN_IN = '/sign_in';
 //**********************************************************************************************************************
 
 export const MY_PROJECTS = '/my_projects';
-export const NEW_PROJECT = MY_PROJECTS + '/new';
+export const PROJECT_NEW = MY_PROJECTS + '/new';
+export const PROJECT_EDIT = MY_PROJECTS + '/edit/:projectId';
+export const projectEdit = (projectId) => MY_PROJECTS + '/edit/' + projectId;
+export const PROJECT_DETAILS = MY_PROJECTS + '/details/:projectId';
+export const projectDetails = (projectId) => MY_PROJECTS + '/details/' + projectId;

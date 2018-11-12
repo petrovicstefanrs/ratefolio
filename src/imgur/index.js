@@ -1,3 +1,1 @@
-import imgurConfig from './config';
-
-export default imgurConfig;
+export {default} from './config';

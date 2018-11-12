@@ -28,13 +28,14 @@ const CLASS = 'rf-MarkdownEditor';
 class MarkdownEditor extends Component {
 	static propTypes = {
 		onChange: PropTypes.func,
+		defaultDescription: PropTypes.string,
 	};
 
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			content: null,
+			content: props.defaultDescription || '',
 			preview_active: false,
 		};
 	}
@@ -89,7 +90,6 @@ class MarkdownEditor extends Component {
 		return (
 			<CodeMirror
 				className={CLASS + '-editor'}
-				autoFocus
 				value={content}
 				options={CODEMIRROR_OPTIONS}
 				onChange={this.handleChange}

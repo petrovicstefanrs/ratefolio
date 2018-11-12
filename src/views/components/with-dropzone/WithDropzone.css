@@ -1,5 +1,6 @@
 .rf-WithDropZone {
 	width: 100%;
+	cursor: pointer;
 }
 
 .rf-WithDropZone .DropZone {

@@ -37,6 +37,13 @@ const About = () => (
 				</a>{' '}
 				for more cool stuff!
 			</TextBlock>
+			<TextBlock>
+				A big <span>thank you</span> to{' '}
+				<a href="https://undraw.co" target="_blank" rel="noopener noreferrer">
+					Undraw
+				</a>{' '}
+				for awesome illustrations, used on this website!
+			</TextBlock>
 		</div>
 	</PageWrapper>
 );

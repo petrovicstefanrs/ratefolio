@@ -1,4 +1,4 @@
-.rf-ProjectNew-section, .rf-Separator {
+.rf-ProjectEdit-section, .rf-Separator {
 	width: 100%;
 	max-width: 400px;
 	display: flex;
@@ -7,7 +7,7 @@
 	flex-shrink: 0;
 }
 
-.rf-ProjectNew-header {
+.rf-ProjectEdit-header {
 	display: flex;
 	flex-direction: column;
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {imgurConfig} from '../imgur';
+import imgurConfig from '../imgur';
 
 export const getHeaders = method => {
 	let headers = {
@@ -30,8 +30,8 @@ export const request = options => {
 		.catch(res => {
 			let err = null;
 			let response = res.response;
-			if (response && response.data && response.data.error) {
-				err = response.data.error;
+			if (response && response.data && response.data.data.error) {
+				err = response.data.data.error;
 			} else if (response) {
 				err = new Error(response.statusText);
 				err.status = response.status;

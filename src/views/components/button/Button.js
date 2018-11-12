@@ -17,16 +17,17 @@ const BUTTON_TYPES = {
 	link: Link,
 };
 
-const Button = ({text, icon, iconPos, onClick, href}) => {
+const Button = ({text, icon, iconPos, onClick, href, disabled}) => {
 	const handleClick = () => {
-		onClick && onClick();
+		onClick && !disabled && onClick();
 	};
 
 	const Type = href ? BUTTON_TYPES.link : BUTTON_TYPES.button;
 	const positionClass = ` ${CLASS}-${iconPos}`;
+	const disabledClass = disabled ? ` ${CLASS}-disabled` : '';
 
 	return (
-		<Type className={CLASS + positionClass} onClick={handleClick} to={href}>
+		<Type className={CLASS + positionClass + disabledClass} onClick={handleClick} to={href}>
 			{icon && <FontAwesome className={CLASS + '-icon'} name={icon} />}
 			<span className={CLASS + '-text'}>{text}</span>
 		</Type>
@@ -39,10 +40,12 @@ Button.propTypes = {
 	iconPos: PropTypes.oneOf([ICON_POSITIONS.left, ICON_POSITIONS.right]),
 	onClick: PropTypes.func,
 	href: PropTypes.string,
+	disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
 	iconPos: ICON_POSITIONS.left,
+	disabled: false,
 };
 
 export default Button;

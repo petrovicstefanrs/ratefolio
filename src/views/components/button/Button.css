@@ -31,3 +31,9 @@
 .rf-Button-right > .rf-Button-icon {
 	margin-left: 10px;
 }
+
+.rf-Button-disabled {
+	cursor: not-allowed;
+	background: var(--color__gray);
+	border-color: var(--color__gray--light);
+}

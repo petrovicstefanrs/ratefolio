@@ -8,6 +8,7 @@ import Separator from '../../components/separator/Separator';
 import TextBlock from '../../components/text-block';
 import Spinner from '../../components/spinner';
 import PageWrapper from '../../components/page-wrapper';
+import DataGrid from '../../components/data-grid';
 
 import * as routes from '../../../app/routes';
 import image from '../../../images/no_data.svg';
@@ -53,11 +54,21 @@ class Home extends Component {
 					<TextBlock>
 						It seems that no one has posted any projects yet.
 						<br />
-						Click <Link to={routes.NEW_PROJECT}>here</Link> be <span>the first!</span>
+						Click <Link to={routes.PROJECT_NEW}>here</Link> be <span>the first!</span>
 					</TextBlock>
 				</div>
 			</React.Fragment>
 		);
+	};
+
+	renderProjects = () => {
+		const {projects, isLoading} = this.props;
+
+		if (!projects || !projects.length || isLoading) {
+			return null;
+		}
+
+		return <DataGrid data={projects} />;
 	};
 
 	render() {
@@ -65,6 +76,7 @@ class Home extends Component {
 			<PageWrapper className={CLASS}>
 				{this.renderSpinner()}
 				{this.renderEmptyPage()}
+				{this.renderProjects()}
 			</PageWrapper>
 		);
 	}

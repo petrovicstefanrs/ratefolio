@@ -11,9 +11,9 @@ import ProjectForm from '../../components/project-form/ProjectForm';
 import {projectsActions} from '../../../redux/projects';
 import {authSelectors} from '../../../redux/auth';
 
-import './ProjectNew.css';
+import './ProjectEdit.css';
 
-const CLASS = 'rf-ProjectNew';
+const CLASS = 'rf-ProjectEdit';
 
 const DEFAULT_PROJECT = {
 	uid: null,
@@ -21,43 +21,26 @@ const DEFAULT_PROJECT = {
 	projectName: null,
 	projectUrl: null,
 	projectThumbnail: null,
+	uploadingThumbnail: false,
 };
 
-class ProjectNew extends Component {
+class ProjectEdit extends Component {
 	static propTypes = {
 		user: PropTypes.object.isRequired,
-		createProject: PropTypes.func.isRequired,
 	};
 
 	handleFormSave = payload => {
-		const {createProject} = this.props;
-		const preparedPayload = this.prepareProjectPayload(payload);
-
-		createProject && createProject(preparedPayload);
-	};
-
-	prepareProjectPayload = data => {
-		const {user} = this.props;
-		const userInfo = authSelectors.getUserInfo(user);
-		return {
-			uid: userInfo.uid,
-			name: data.projectName,
-			url: data.projectUrl,
-			thumbnail: data.projectThumbnail,
-			description: data.projectDescription,
-			user_name: userInfo.displayName,
-			user_avatar: userInfo.photoURL,
-		};
+		console.log(payload);
 	};
 
 	renderHeader = () => {
 		return (
 			<React.Fragment>
 				<div className={CLASS + '-header ' + CLASS + '-section'}>
-					<SectionHeader text={'New Project'} />
+					<SectionHeader text={'Edit Project'} />
 					<TextBlock>
-						Create a <span>new project</span> and publish it so others can give you{' '}
-						<span>ratings and feedback!</span>
+						Edit an <span>existing project</span> and publish{' '}
+						<span>new</span> changes!
 					</TextBlock>
 				</div>
 				<Separator />
@@ -72,7 +55,7 @@ class ProjectNew extends Component {
 				<ProjectForm
 					onSave={this.handleFormSave}
 					defaultProject={DEFAULT_PROJECT}
-					saveLabel="Publish Project"
+					saveLabel="Save Changes"
 				/>
 			</PageWrapper>
 		);
@@ -84,10 +67,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-	createProject: projectsActions.createProject,
+	getProjects: projectsActions.getProjects,
 };
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ProjectNew);
+)(ProjectEdit);

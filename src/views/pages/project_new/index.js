@@ -1,1 +1,1 @@
-export {Default} from './ProjectNew';
+export {default} from './ProjectNew';

@@ -27,11 +27,12 @@ export const getUser = state => {
 };
 
 export const getUserInfo = user => {
-	const {displayName, email, photoURL} = user;
+	const {displayName, email, photoURL, uid} = user;
 
 	return {
 		displayName,
 		email,
 		photoURL,
+		uid,
 	};
 };
