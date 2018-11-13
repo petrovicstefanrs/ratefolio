@@ -3,6 +3,7 @@ service cloud.firestore {
     match /projects/{project} {
       allow create: if request.auth.uid != null;
 	  allow update, delete: if request.auth.uid == resource.data.uid;
+	  allow read: if true;
     }
   }
 }
