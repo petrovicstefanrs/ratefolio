@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom';
 import lodashMap from 'lodash/map';
 import PropTypes from 'prop-types';
 
-import Separator from '../../components/separator';
+import Avatar from '../avatar';
+import Separator from '../separator';
 import * as routes from '../../../app/routes';
 
 import './DataGrid.css';
-import Avatar from '../avatar';
 
 const CLASS = 'rf-DataGrid';
 
@@ -22,7 +22,7 @@ class DataGrid extends Component {
 		return (
 			<Link to={routes.projectDetails(id)} className={CLASS + '-card'} key={uid + '_' + id}>
 				<div className={CLASS + '-card-thumbnail'}>
-					<img src={thumbnail} />
+					<img src={thumbnail} alt={`${name} - Project thumbnail`}/>
 				</div>
 				<div className={CLASS + '-card-title'}>
 					{name}

@@ -71,3 +71,8 @@
 .rf-ProjectDetails-detailControls .rf-Button {
 	margin-right: 10px;
 }
+
+.rf-ProjectDetails-comments {
+	width: 100%;
+	margin: 40px 0;
+}

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Disqus, {DiscussionEmbed} from 'disqus-react';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import {connect} from 'react-redux';
@@ -9,15 +10,17 @@ import Spinner from '../../components/spinner';
 import MarkdownRenderer from '../../components/markdown-renderer';
 import Avatar from '../../components/avatar';
 import Button from '../../components/button';
+import MissingProject from '../../components/missing-project/MissingProject';
 
 import {projectsActions, projectsSelectors} from '../../../redux/projects';
 import {authSelectors} from '../../../redux/auth';
 import {toHumanReadableDate} from '../../../lib/date';
 import * as routes from '../../../app/routes';
 import FA from '../../../lib/font_awesome';
+import env from '../../../env';
+import disqusConfig from '../../../disqus/config';
 
 import './ProjectDetails.css';
-import MissingProject from '../../components/missing-project/MissingProject';
 
 const CLASS = 'rf-ProjectDetails';
 
@@ -81,6 +84,21 @@ class ProjectDetails extends Component {
 		);
 	};
 
+	renderComments = () => {
+		const {project, match} = this.props;
+		const {id, name} = project;
+		const {url} = match;
+
+		const disqusShortname = disqusConfig.shortname;
+		const config = {
+			url: env.protocol + env.baseUrl + url,
+			identifier: id,
+			title: name,
+		};
+
+		return <DiscussionEmbed shortname={disqusShortname} config={config} />;
+	};
+
 	renderProject = () => {
 		const {project, isLoading} = this.props;
 
@@ -111,6 +129,7 @@ class ProjectDetails extends Component {
 					</div>
 				</div>
 				<MarkdownRenderer className={CLASS + '-description'} source={description} />
+				<div className={CLASS + '-comments'}>{this.renderComments()}</div>
 			</React.Fragment>
 		);
 	};

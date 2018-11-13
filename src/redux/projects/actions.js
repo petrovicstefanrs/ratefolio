@@ -1,5 +1,3 @@
-import lodashMap from 'lodash/map';
-
 import * as TYPES from './action-types';
 import history from '../../app/history';
 import {toastActions} from '../toast';
