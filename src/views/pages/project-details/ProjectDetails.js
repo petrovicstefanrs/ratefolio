@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Disqus, {DiscussionEmbed} from 'disqus-react';
+import {DiscussionEmbed} from 'disqus-react';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import {connect} from 'react-redux';

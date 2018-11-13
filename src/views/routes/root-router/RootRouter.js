@@ -29,19 +29,6 @@ class RootRouter extends Component {
 		isLoading: PropTypes.bool,
 	};
 
-	// constructor(props) {
-	// 	super(props);
-
-	// }
-
-	// componentWillUpdate(nextProps) {
-	// 	if (!nextProps.isLoggedIn && !nextProps.redirect) {
-	// 		this.props.setAuthRedirect(nextProps.location);
-	// 	} else {
-	// 		return;
-	// 	}
-	// }
-
 	componentDidMount() {
 		this.initializeApp();
 	}
@@ -97,31 +84,6 @@ class RootRouter extends Component {
 					path={routes.PROJECT_DETAILS}
 					component={ProjectDetails}
 				/>
-				{/*
-
-				<AuthRoute
-					exact
-					name="DashboardHome"
-					path={routes.DASHBOARD_HOME}
-					component={Dashboard}
-					isPrivate={true}
-				/>
-				<AuthRoute
-					exact
-					name="DashboardFavourites"
-					path={routes.DASHBOARD_FAVOURITES}
-					component={Favourites}
-					isPrivate={true}
-				/>
-				<AuthRoute
-					exact
-					name="DashboardSettings"
-					path={routes.DASHBOARD_SETTINGS}
-					component={ProfileSettings}
-					isPrivate={true}
-				/>
-
-		*/}
 				<AuthRoute name="Not found" path="*" component={NotFound} />
 			</Switch>
 		);
@@ -132,7 +94,6 @@ class RootRouter extends Component {
 	}
 
 	render() {
-		const {isInitialized, isLoggedIn} = this.props;
 		return (
 			<React.Fragment>
 				<Toaster />

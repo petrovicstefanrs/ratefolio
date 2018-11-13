@@ -13,7 +13,7 @@ import {toastActions} from '../../../redux/toast';
 import {apiImgur} from '../../../api/imgur';
 
 import './ProjectForm.css';
-import { projectsSelectors } from '../../../redux/projects';
+import {projectsSelectors} from '../../../redux/projects';
 
 const CLASS = 'rf-ProjectForm';
 
@@ -123,7 +123,8 @@ class ProjectForm extends Component {
 		const buttonLabel = isWorkingOnProject ? <FontAwesome name={FA.cog} spin /> : saveLabel;
 		const {projectDescription, projectName, projectUrl, projectThumbnail} = project;
 
-		const isDisabled = !projectDescription || !projectName || !projectUrl || !projectThumbnail || isWorkingOnProject;
+		const isDisabled =
+			!projectDescription || !projectName || !projectUrl || !projectThumbnail || isWorkingOnProject;
 
 		return (
 			<React.Fragment>
@@ -143,13 +144,13 @@ class ProjectForm extends Component {
 				<h4>Project Name:</h4>
 				<InputField
 					autoFocus={true}
-					onChange={(data) => this.handleProjectChange('projectName', data)}
+					onChange={data => this.handleProjectChange('projectName', data)}
 					placeholder="A very cool project..."
 					defaultValue={projectName}
 				/>
 				<h4>Project Url:</h4>
 				<InputField
-					onChange={(data) => this.handleProjectChange('projectUrl', data)}
+					onChange={data => this.handleProjectChange('projectUrl', data)}
 					placeholder="https://www.verycoolproject.com"
 					defaultValue={projectUrl}
 				/>
@@ -185,7 +186,7 @@ class ProjectForm extends Component {
 				<i>HINT: You can write description using Markdown</i>
 				<MarkdownEditor
 					defaultDescription={projectDescription}
-					onChange={(data) => this.handleProjectChange('projectDescription', data)}
+					onChange={data => this.handleProjectChange('projectDescription', data)}
 				/>
 			</React.Fragment>
 		);
@@ -222,7 +223,7 @@ class ProjectForm extends Component {
 
 		const uploadedContent = projectThumbnail && !uploading && (
 			<React.Fragment>
-				<img src={projectThumbnail} />
+				<img src={projectThumbnail} alt="Uploaded Thumbnail"/>
 			</React.Fragment>
 		);
 
