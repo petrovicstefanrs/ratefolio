@@ -35,7 +35,7 @@ const Button = ({text, icon, iconPos, onClick, href, disabled}) => {
 };
 
 Button.propTypes = {
-	text: PropTypes.string,
+	text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.object]),
 	icon: PropTypes.string,
 	iconPos: PropTypes.oneOf([ICON_POSITIONS.left, ICON_POSITIONS.right]),
 	onClick: PropTypes.func,

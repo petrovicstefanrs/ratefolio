@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import SectionHeader from '../../components/section-header/SectionHeader';
-import Separator from '../../components/separator/Separator';
+import SectionHeader from '../../components/section-header';
+import Separator from '../../components/separator';
 import TextBlock from '../../components/text-block';
 import PageWrapper from '../../components/page-wrapper';
-import ProjectForm from '../../components/project-form/ProjectForm';
+import ProjectForm from '../../components/project-form';
 
 import {projectsActions} from '../../../redux/projects';
 import {authSelectors} from '../../../redux/auth';

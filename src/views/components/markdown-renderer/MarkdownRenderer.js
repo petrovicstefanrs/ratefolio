@@ -6,7 +6,7 @@ import './MarkdownRenderer.css';
 const CLASS = 'rf-MarkdownRenderer';
 
 const MarkdownRenderer = ({className, ...props}) => (
-	<ReactMarkdown className={CLASS + ' ' + className} {...props} escapeHtml={false}/>
+	<ReactMarkdown className={CLASS + ' ' + className} {...props} escapeHtml={true}/>
 );
 
 export default MarkdownRenderer;

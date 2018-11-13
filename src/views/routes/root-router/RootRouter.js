@@ -13,8 +13,10 @@ import AuthRoute from '../../components/auth-route';
 import Spinner from '../../components/spinner';
 import MainMenu from '../../components/main-menu';
 import Toaster from '../../components/toaster';
-import ProjectNew from '../../pages/project_new';
-import ProjectEdit from '../../pages/project_edit';
+import ProjectNew from '../../pages/project-new';
+import ProjectEdit from '../../pages/project-edit';
+import MyProjects from '../../pages/my-projects';
+import ProjectDetails from '../../pages/project-details';
 
 import * as routes from '../../../app/routes';
 import {authActions, authSelectors} from '../../../redux/auth';
@@ -73,7 +75,7 @@ class RootRouter extends Component {
 					name="My Projects"
 					isPrivate={true}
 					path={routes.MY_PROJECTS}
-					component={SignIn}
+					component={MyProjects}
 				/>
 				<AuthRoute
 					exact
@@ -88,6 +90,12 @@ class RootRouter extends Component {
 					isPrivate={true}
 					path={routes.PROJECT_EDIT}
 					component={ProjectEdit}
+				/>
+				<AuthRoute
+					exact
+					name="Project Details"
+					path={routes.PROJECT_DETAILS}
+					component={ProjectDetails}
 				/>
 				{/*
 

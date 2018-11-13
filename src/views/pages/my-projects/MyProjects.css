@@ -1,0 +1,33 @@
+.rf-MyProjects-section, .rf-Separator {
+	width: 100%;
+	max-width: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.rf-MyProjects-top > img {
+	width: 200px;
+	height: auto;
+}
+
+.rf-MyProjects-bottom {
+	display: flex;
+	flex-direction: column;
+}
+
+.rf-MyProjects-floatingButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--color__secondary);
+	width: 40px;
+	height: 40px;
+	box-shadow: var(--drop-shadow__inverse);
+	border-radius: 50%;
+	position: absolute;
+	right: 10px;
+	bottom: 20px;
+	z-index: 9998;
+}

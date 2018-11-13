@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from '../../components/button';
-import SectionHeader from '../../components/section-header/SectionHeader';
+import SectionHeader from '../../components/section-header';
 import Separator from '../../components/separator';
 import PageWrapper from '../../components/page-wrapper';
 

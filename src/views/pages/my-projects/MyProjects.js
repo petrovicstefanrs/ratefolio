@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import FontAwesome from 'react-fontawesome';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
@@ -11,24 +12,43 @@ import PageWrapper from '../../components/page-wrapper';
 import DataGrid from '../../components/data-grid';
 
 import * as routes from '../../../app/routes';
-import image from '../../../images/no_data.svg';
+import image from '../../../images/no_projects.svg';
 import {projectsActions, projectsSelectors} from '../../../redux/projects';
+import {authSelectors} from '../../../redux/auth';
+import FA from '../../../lib/font_awesome';
 
-import './Home.css';
+import './MyProjects.css';
 
-const CLASS = 'rf-Home';
+const CLASS = 'rf-MyProjects';
 
-class Home extends Component {
+class MyProjects extends Component {
 	static propTypes = {
 		projects: PropTypes.array,
-		getProjects: PropTypes.func.isRequired,
+		getUserProjects: PropTypes.func.isRequired,
+		user: PropTypes.object.isRequired,
 	};
 
 	componentDidMount() {
-		const {getProjects} = this.props;
+		const {getUserProjects, user} = this.props;
+		const userInfo = authSelectors.getUserInfo(user);
+		const {uid} = userInfo;
 
-		getProjects && getProjects();
+		getUserProjects && uid && getUserProjects(uid);
 	}
+
+	renderFloatingButton = () => {
+		const {projects, isLoading} = this.props;
+
+		if (!projects || !projects.length || isLoading) {
+			return null;
+		}
+
+		return (
+			<Link className={CLASS + '-floatingButton'} to={routes.PROJECT_NEW}>
+				<FontAwesome name={FA.plus} />
+			</Link>
+		);
+	};
 
 	renderSpinner = () => {
 		const {projects, isLoading} = this.props;
@@ -46,15 +66,15 @@ class Home extends Component {
 		return (
 			<React.Fragment>
 				<div className={CLASS + '-top ' + CLASS + '-section'}>
-					<img src={image} alt="No Data Illustration" />
+					<img src={image} alt="No Projects Illustration" />
 				</div>
 				<Separator />
 				<div className={CLASS + '-bottom ' + CLASS + '-section'}>
-					<SectionHeader text="Oooops..." />
+					<SectionHeader text="Welp..." />
 					<TextBlock>
-						It seems that no one has posted any projects yet.
+						It seems that you don't have any projects yet.
 						<br />
-						Click <Link to={routes.PROJECT_NEW}>here</Link> be <span>the first!</span>
+						Click <Link to={routes.PROJECT_NEW}>here</Link> to post your <span>first</span> project!
 					</TextBlock>
 				</div>
 			</React.Fragment>
@@ -77,21 +97,23 @@ class Home extends Component {
 				{this.renderSpinner()}
 				{this.renderEmptyPage()}
 				{this.renderProjects()}
+				{this.renderFloatingButton()}
 			</PageWrapper>
 		);
 	}
 }
 
 const mapStateToProps = state => ({
-	projects: projectsSelectors.getProjectsList(state),
+	user: authSelectors.getUser(state),
+	projects: projectsSelectors.getUserProjectsList(state),
 	isLoading: projectsSelectors.isGettingProjects(state),
 });
 
 const mapDispatchToProps = {
-	getProjects: projectsActions.getProjects,
+	getUserProjects: projectsActions.getUserProjects,
 };
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Home);
+)(MyProjects);

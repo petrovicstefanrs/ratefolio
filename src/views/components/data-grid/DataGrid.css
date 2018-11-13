@@ -46,7 +46,10 @@
 	font-size: var(--font__size--big);
 	text-transform: uppercase;
 	font-weight: 700;
-	display: flex;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
 }
 
 .rf-DataGrid-card-footer {
@@ -57,7 +60,7 @@
 	font-size: var(--font__size--small);
 }
 
-.rf-DataGrid-card-footer > img {
+.rf-DataGrid-card-footer > .rf-Avatar {
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;

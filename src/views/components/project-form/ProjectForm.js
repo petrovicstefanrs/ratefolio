@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome';
 import {connect} from 'react-redux';
 
 import MarkdownEditor from '../../components/markdown-editor';
-import WithDropzone from '../../components/with-dropzone/WithDropzone';
+import WithDropzone from '../../components/with-dropzone';
 import InputField from '../../components/input-field';
 import Button from '../../components/button';
 
@@ -13,6 +13,7 @@ import {toastActions} from '../../../redux/toast';
 import {apiImgur} from '../../../api/imgur';
 
 import './ProjectForm.css';
+import { projectsSelectors } from '../../../redux/projects';
 
 const CLASS = 'rf-ProjectForm';
 
@@ -26,6 +27,7 @@ class ProjectForm extends Component {
 		defaultProject: PropTypes.object.isRequired,
 		onSave: PropTypes.func,
 		saveLabel: PropTypes.string,
+		isWorkingOnProject: PropTypes.bool,
 	};
 
 	static defaultProps = {
@@ -115,17 +117,18 @@ class ProjectForm extends Component {
 	};
 
 	renderFooter = () => {
-		const {saveLabel} = this.props;
+		const {saveLabel, isWorkingOnProject} = this.props;
 		const {project} = this.state;
 
+		const buttonLabel = isWorkingOnProject ? <FontAwesome name={FA.cog} spin /> : saveLabel;
 		const {projectDescription, projectName, projectUrl, projectThumbnail} = project;
 
-		const isDisabled = !projectDescription || !projectName || !projectUrl || !projectThumbnail;
+		const isDisabled = !projectDescription || !projectName || !projectUrl || !projectThumbnail || isWorkingOnProject;
 
 		return (
 			<React.Fragment>
 				<div className={CLASS + '-footer'}>
-					<Button disabled={isDisabled} onClick={this.handleSave} text={saveLabel} />
+					<Button disabled={isDisabled} onClick={this.handleSave} text={buttonLabel} />
 				</div>
 			</React.Fragment>
 		);
@@ -248,11 +251,15 @@ class ProjectForm extends Component {
 	}
 }
 
+const mapStateToProps = state => ({
+	isWorkingOnProject: projectsSelectors.isWorkingOnProject(state),
+});
+
 const mapDispatchToProps = {
 	addToast: toastActions.addToast,
 };
 
 export default connect(
-	null,
+	mapStateToProps,
 	mapDispatchToProps
 )(ProjectForm);

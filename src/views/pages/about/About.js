@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import SectionHeader from '../../components/section-header/SectionHeader';
-import Separator from '../../components/separator/Separator';
+import SectionHeader from '../../components/section-header';
+import Separator from '../../components/separator';
 import TextBlock from '../../components/text-block';
 import PageWrapper from '../../components/page-wrapper';
 

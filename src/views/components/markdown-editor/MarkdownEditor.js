@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Redirect, Route} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CodeMirror from 'react-codemirror';
 import 'codemirror/mode/markdown/markdown';
