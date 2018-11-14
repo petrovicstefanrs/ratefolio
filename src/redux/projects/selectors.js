@@ -42,5 +42,5 @@ const sortProjects = productList => {
 		const updatedAt = project.updated_at ? project.updated_at.toDate() : null;
 		return updatedAt;
 	});
-	return sortedProjects;
+	return sortedProjects.reverse();
 };
