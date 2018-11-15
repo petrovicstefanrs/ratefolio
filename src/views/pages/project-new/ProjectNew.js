@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router';
 
 import SectionHeader from '../../components/section-header';
 import Separator from '../../components/separator';
@@ -10,6 +11,7 @@ import ProjectForm from '../../components/project-form';
 
 import {projectsActions} from '../../../redux/projects';
 import {authSelectors} from '../../../redux/auth';
+import * as routes from '../../../app/routes';
 
 import './ProjectNew.css';
 
@@ -34,6 +36,11 @@ class ProjectNew extends Component {
 		const preparedPayload = this.prepareProjectPayload(payload);
 
 		createProject && createProject(preparedPayload);
+	};
+
+	handleFormClose = () => {
+		const {history} = this.props;
+		history.push(routes.HOME);
 	};
 
 	prepareProjectPayload = data => {
@@ -71,8 +78,10 @@ class ProjectNew extends Component {
 				{this.renderHeader()}
 				<ProjectForm
 					onSave={this.handleFormSave}
+					onClose={this.handleFormClose}
 					defaultProject={DEFAULT_PROJECT}
 					saveLabel="Publish Project"
+					closeLabel="Close"
 				/>
 			</PageWrapper>
 		);
@@ -87,7 +96,7 @@ const mapDispatchToProps = {
 	createProject: projectsActions.createProject,
 };
 
-export default connect(
+export default withRouter(connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ProjectNew);
+)(ProjectNew));

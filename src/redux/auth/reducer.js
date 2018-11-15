@@ -16,6 +16,7 @@ export const authReducer = (state = new AuthState(), {payload, type}) => {
 			return state.merge({
 				initialized: false,
 				loading: true,
+				error: null,
 			});
 
 		case TYPES.INIT_AUTH_SUCCESS:
@@ -26,6 +27,7 @@ export const authReducer = (state = new AuthState(), {payload, type}) => {
 				uid: payload ? payload.uid : null,
 				user: payload || null,
 				loading: false,
+				error: null,
 			});
 
 		case TYPES.SIGN_OUT_SUCCESS:
@@ -42,6 +44,7 @@ export const authReducer = (state = new AuthState(), {payload, type}) => {
 		case TYPES.SIGN_OUT_START:
 			return state.merge({
 				loading: true,
+				error: null,
 			});
 
 		default:

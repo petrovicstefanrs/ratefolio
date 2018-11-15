@@ -26,12 +26,15 @@ class ProjectForm extends Component {
 	static propTypes = {
 		defaultProject: PropTypes.object.isRequired,
 		onSave: PropTypes.func,
+		onClose: PropTypes.func,
 		saveLabel: PropTypes.string,
+		closeLabel: PropTypes.string,
 		isWorkingOnProject: PropTypes.bool,
 	};
 
 	static defaultProps = {
 		saveLabel: 'Save',
+		closeLabel: 'Close',
 	};
 
 	constructor(props) {
@@ -55,6 +58,12 @@ class ProjectForm extends Component {
 		const payload = this.state.project;
 
 		onSave && onSave(payload);
+	};
+
+	handleClose = () => {
+		const {onClose} = this.props;
+
+		onClose && onClose();
 	};
 
 	handleThumbUpload = files => {
@@ -117,19 +126,23 @@ class ProjectForm extends Component {
 	};
 
 	renderFooter = () => {
-		const {saveLabel, isWorkingOnProject} = this.props;
+		const {saveLabel, closeLabel, isWorkingOnProject} = this.props;
 		const {project} = this.state;
 
-		const buttonLabel = isWorkingOnProject ? <FontAwesome name={FA.cog} spin /> : saveLabel;
+		const buttonSaveLabel = isWorkingOnProject ? <FontAwesome name={FA.cog} spin /> : saveLabel;
+		const buttonCloseLabel = isWorkingOnProject ? <FontAwesome name={FA.cog} spin /> : closeLabel;
 		const {projectDescription, projectName, projectUrl, projectThumbnail} = project;
 
-		const isDisabled =
+		const isSaveDisabled =
 			!projectDescription || !projectName || !projectUrl || !projectThumbnail || isWorkingOnProject;
+
+		const isCloseDisabled = isWorkingOnProject;
 
 		return (
 			<React.Fragment>
 				<div className={CLASS + '-footer'}>
-					<Button disabled={isDisabled} onClick={this.handleSave} text={buttonLabel} />
+					<Button disabled={isCloseDisabled} onClick={this.handleClose} text={buttonCloseLabel} />
+					<Button disabled={isSaveDisabled} onClick={this.handleSave} text={buttonSaveLabel} />
 				</div>
 			</React.Fragment>
 		);
@@ -142,6 +155,7 @@ class ProjectForm extends Component {
 		return (
 			<React.Fragment>
 				<h4>Project Name:</h4>
+				<span className={CLASS + '-required'}>REQUIRED</span>
 				<InputField
 					autoFocus={true}
 					onChange={data => this.handleProjectChange('projectName', data)}
@@ -149,6 +163,7 @@ class ProjectForm extends Component {
 					defaultValue={projectName}
 				/>
 				<h4>Project Url:</h4>
+				<span className={CLASS + '-required'}>REQUIRED</span>
 				<InputField
 					onChange={data => this.handleProjectChange('projectUrl', data)}
 					placeholder="https://www.verycoolproject.com"
@@ -163,6 +178,7 @@ class ProjectForm extends Component {
 		return (
 			<React.Fragment>
 				<h4>Project Thumbnail:</h4>
+				<span className={CLASS + '-required'}>REQUIRED</span>
 				<WithDropzone
 					maxSize={MAX_IMAGE_SIZE}
 					accept={ACCEPTED_FILE_FORMATS}
@@ -183,6 +199,7 @@ class ProjectForm extends Component {
 		return (
 			<React.Fragment>
 				<h4>Project Description:</h4>
+				<span className={CLASS + '-required'}>REQUIRED</span>
 				<i>HINT: You can write description using Markdown</i>
 				<MarkdownEditor
 					defaultDescription={projectDescription}
@@ -223,7 +240,7 @@ class ProjectForm extends Component {
 
 		const uploadedContent = projectThumbnail && !uploading && (
 			<React.Fragment>
-				<img src={projectThumbnail} alt="Uploaded Thumbnail"/>
+				<img src={projectThumbnail} alt="Uploaded Thumbnail" />
 			</React.Fragment>
 		);
 

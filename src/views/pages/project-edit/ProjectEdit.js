@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router';
 
 import SectionHeader from '../../components/section-header';
 import Separator from '../../components/separator';
@@ -13,6 +14,7 @@ import ForbiddenPage from '../../components/forbiden-page';
 
 import {projectsActions, projectsSelectors} from '../../../redux/projects';
 import {authSelectors} from '../../../redux/auth';
+import * as routes from '../../../app/routes';
 
 import './ProjectEdit.css';
 
@@ -26,6 +28,7 @@ class ProjectEdit extends Component {
 		getProjectById: PropTypes.func.isRequired,
 		updateProject: PropTypes.func.isRequired,
 		match: PropTypes.object.isRequired,
+		history: PropTypes.object.isRequired,
 	};
 
 	componentDidMount() {
@@ -76,6 +79,11 @@ class ProjectEdit extends Component {
 		const preparedPayload = this.prepareProjectPayload(payload);
 
 		updateProject && projectId && updateProject(projectId, preparedPayload);
+	};
+
+	handleFormClose = () => {
+		const {history} = this.props;
+		history.push(routes.HOME);
 	};
 
 	prepareProjectPayload = data => {
@@ -131,8 +139,10 @@ class ProjectEdit extends Component {
 		return (
 			<ProjectForm
 				onSave={this.handleFormSave}
+				onClose={this.handleFormClose}
 				defaultProject={EDITABLE_PROJECT}
 				saveLabel="Save Changes"
+				closeLabel="Close"
 			/>
 		);
 	};
@@ -161,7 +171,7 @@ const mapDispatchToProps = {
 	updateProject: projectsActions.updateProject,
 };
 
-export default connect(
+export default withRouter(connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ProjectEdit);
+)(ProjectEdit));

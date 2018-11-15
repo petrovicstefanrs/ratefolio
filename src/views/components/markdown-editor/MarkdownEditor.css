@@ -4,10 +4,12 @@
 
 .rf-MarkdownEditor-editor {
 	height: inherit;
+	min-height: 300px;
 }
 
 .rf-MarkdownEditor-preview {
 	height: auto;
+	min-height: 300px;
 }
 
 .rf-MarkdownEditor-tabs {

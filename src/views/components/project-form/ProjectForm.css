@@ -9,6 +9,18 @@
 .rf-ProjectForm i {
 	font-size: var(--font__size--small);
 	color: var(--font__color--dark);
+	display: block;
+}
+
+.rf-ProjectForm h4 {
+	display: inline-block;
+}
+
+.rf-ProjectForm-required {
+	font-size: var(--font__size--small);
+	color: var(--font__color--dark);
+	font-style: italic;
+	margin-left: 10px;
 }
 
 .rf-ProjectForm-top {
@@ -61,6 +73,11 @@
 	width: 50%;
 	max-width: unset;
 	height: 40px;
+	margin-right: 10px;
+}
+
+.rf-ProjectForm-footer .rf-Button:last-child {
+	margin-right: 0;
 }
 
 .rf-ProjectForm-dropzoneContent {
