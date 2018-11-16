@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import FontAwesome from 'react-fontawesome';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
@@ -15,7 +14,6 @@ import * as routes from '../../../app/routes';
 import image from '../../../images/no_projects.svg';
 import {projectsActions, projectsSelectors} from '../../../redux/projects';
 import {authSelectors} from '../../../redux/auth';
-import FA from '../../../lib/font_awesome';
 
 import './MyProjects.css';
 

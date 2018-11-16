@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import lodashMap from 'lodash/map';
 import PropTypes from 'prop-types';
 
-import Avatar from '../avatar';
-import Separator from '../separator';
 import * as routes from '../../../app/routes';
 
 import './DataGrid.css';

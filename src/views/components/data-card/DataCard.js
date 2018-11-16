@@ -12,7 +12,7 @@ import './DataCard.css';
 const CLASS = 'rf-DataCard';
 
 const DataCard = ({name, thumbnail, id, user}) => {
-	const {uid, user_avatar, user_name} = user;
+	const {user_avatar, user_name} = user;
 
 	return (
 		<Link to={routes.projectDetails(id)} className={CLASS}>
