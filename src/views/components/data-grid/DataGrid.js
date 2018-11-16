@@ -8,32 +8,30 @@ import Separator from '../separator';
 import * as routes from '../../../app/routes';
 
 import './DataGrid.css';
+import DataCard from '../data-card';
+import ActionCard from '../action-card';
 
 const CLASS = 'rf-DataGrid';
 
 class DataGrid extends Component {
 	static propTypes = {
 		data: PropTypes.array.isRequired,
+		showActionCard: PropTypes.bool,
+	};
+
+	static defaultProps = {
+		showActionCard: false,
 	};
 
 	renderCard = data => {
 		const {name, thumbnail, uid, id, user_avatar, user_name} = data;
+		const user = {
+			uid,
+			user_name,
+			user_avatar,
+		};
 
-		return (
-			<Link to={routes.projectDetails(id)} className={CLASS + '-card'} key={uid + '_' + id}>
-				<div className={CLASS + '-card-thumbnail'}>
-					<img src={thumbnail} alt={`${name} - Project thumbnail`}/>
-				</div>
-				<div className={CLASS + '-card-title'}>
-					{name}
-				</div>
-				<Separator />
-				<div className={CLASS + '-card-footer'}>
-					{user_name}
-					<Avatar imgUrl={user_avatar} />
-				</div>
-			</Link>
-		);
+		return <DataCard key={uid + '_' + id} name={name} thumbnail={thumbnail} id={id} user={user} />;
 	};
 
 	renderCards = () => {
@@ -45,7 +43,12 @@ class DataGrid extends Component {
 	};
 
 	render() {
-		return <div className={CLASS}>{this.renderCards()}</div>;
+		return (
+			<div className={CLASS}>
+				{this.renderCards()}
+				<ActionCard href={routes.PROJECT_NEW} label="New Project" />
+			</div>
+		);
 	}
 }
 

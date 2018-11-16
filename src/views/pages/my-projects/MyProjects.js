@@ -36,20 +36,6 @@ class MyProjects extends Component {
 		getUserProjects && uid && getUserProjects(uid);
 	}
 
-	renderFloatingButton = () => {
-		const {projects, isLoading} = this.props;
-
-		if (!projects || !projects.length || isLoading) {
-			return null;
-		}
-
-		return (
-			<Link className={CLASS + '-floatingButton'} to={routes.PROJECT_NEW}>
-				<FontAwesome name={FA.plus} />
-			</Link>
-		);
-	};
-
 	renderSpinner = () => {
 		const {projects, isLoading} = this.props;
 
@@ -97,7 +83,6 @@ class MyProjects extends Component {
 				{this.renderSpinner()}
 				{this.renderEmptyPage()}
 				{this.renderProjects()}
-				{this.renderFloatingButton()}
 			</PageWrapper>
 		);
 	}

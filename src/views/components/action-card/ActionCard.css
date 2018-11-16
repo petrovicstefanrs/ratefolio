@@ -1,0 +1,39 @@
+.rf-ActionCard {
+	flex-basis: 20%;
+	margin: 5px;
+	min-width: 222px;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: var(--color__gray);
+	box-shadow: var(--drop-shadow__inverse);
+	transition: all 0.5s ease-in-out;
+	justify-content: center;
+	align-items: center;
+}
+
+.rf-ActionCard:last-child {
+	margin-right: auto;
+}
+
+.rf-ActionCard:hover {
+	box-shadow: var(--drop-shadow__regular);
+}
+
+.rf-ActionCard .rf-Separator {
+	margin: 0 auto;
+	width: calc(100% - 10px);
+	background: var(--color__gray--light);
+}
+
+.rf-ActionCard-icon {
+	font-size: calc(var(--font__size--big)*4);
+}
+
+.rf-ActionCard-label {
+	font-size: var(--font__size--big);
+	text-transform: uppercase;
+	font-weight: 700;
+	display: block;
+	margin-top: 10px;
+}
