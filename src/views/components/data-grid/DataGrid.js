@@ -45,8 +45,8 @@ class DataGrid extends Component {
 	render() {
 		return (
 			<div className={CLASS}>
-				{this.renderCards()}
 				<ActionCard href={routes.PROJECT_NEW} label="New Project" />
+				{this.renderCards()}
 			</div>
 		);
 	}
