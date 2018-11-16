@@ -27,3 +27,4 @@ src/firebase/config.local.js
 src/imgur/config.local.js
 src/disqus/config.local.js
 env.local.js
+.firebase/
